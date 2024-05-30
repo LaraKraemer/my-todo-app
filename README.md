@@ -1,4 +1,4 @@
-# My web todo 
+# My web todo app
 
 As part of my Python Bootcamp, I've developed a todo app with the Streamlit library. 
 
