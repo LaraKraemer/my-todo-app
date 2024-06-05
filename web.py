@@ -1,7 +1,7 @@
 import streamlit as st
-import functions
+import src.functions
 
-todos = functions.get_todos()
+todos = src.functions.get_todos()
 
 # adjust layout depending on device
 st.set_page_config(layout="wide")
@@ -10,7 +10,7 @@ st.set_page_config(layout="wide")
 def add_todo():
     todo= st.session_state["new_todo"] + "\n"
     todos.append(todo)
-    functions.write_todos(todos)
+    src.functions.write_todos(todos)
 
 st.title("My Todo app")
 st.subheader("This is my todo app")
@@ -26,7 +26,7 @@ for index, todo in enumerate(todos):
     # deleting feature for completed items
     if checkbox:
         todos.pop(index)
-        functions.write_todos(todos)
+        src.functions.write_todos(todos)
         del st.session_state[todo]
         st.experimental_rerun()
 
